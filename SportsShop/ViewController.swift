@@ -27,63 +27,48 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         loginBtnOutlet.layer.cornerRadius = 12
         logoImageOutlets.layer.cornerRadius = 0.5 * logoImageOutlets.bounds.size.width
-       // self.navigationController?.isNavigationBarHidden = true
+        // self.navigationController?.isNavigationBarHidden = true
         print(Realm.Configuration.defaultConfiguration.fileURL)//get url for database realm
     }
     
-
+    
     @IBAction func loginBtnAction(_ sender: Any) {
-        guard let username = userNameTxtFld.text else {
-                // Handle the case where the username is empty
-                return
-            
-            }
-
-            // Capitalize the first letter of the username
-            let capitalizedUsername = capitalizeFirstLetter(username)
-
-            // Get the first letter of the capitalized username
-            let firstLetter = String(capitalizedUsername.prefix(1))
-
-            // Store the first letter in the shared instance
-            UserData.shared.firstLetter = firstLetter
-//        let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                    navigationController?.pushViewController(secondViewController, animated: true)
-        let regDetails = try! Realm()
-        let validate = regDetails.objects(UserDetails.self)
-        guard let enteredUsername = userNameTxtFld.text else {
-                    return
-                }
-        if let matchedUser = regDetails.objects(UserDetails.self).filter("username == %@", enteredUsername).first {
-            let enteredPassword = passwordTxtFld.text ?? ""
-            
-            if enteredPassword == matchedUser.password {
-                        let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                                    navigationController?.pushViewController(secondViewController, animated: true)
-            }
+        guard let enteredUsername = userNameTxtFld.text, !enteredUsername.isEmpty,
+              let enteredPassword = passwordTxtFld.text, !enteredPassword.isEmpty else {
+            // Handle the case where username or password is empty
+            return
         }
-        else{
-            if userNameTxtFld.text != "" && passwordTxtFld.text != ""{
-                let alertController = UIAlertController(title: "Alert", message: "You have no account. Please register.", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        present(alertController, animated: true, completion: nil)
-            }else{
-                let alertController = UIAlertController(title: "Alert", message: "Please enter username and password", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        present(alertController, animated: true, completion: nil)
+        
+        if enteredUsername == "Samuel" && enteredPassword == "samuel123" {
+            // Navigate to adminViewController
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
+            navigationController?.pushViewController(adminViewController, animated: true)
+        } else {
+            let regDetails = try! Realm()
+            let validate = regDetails.objects(UserDetails.self)
+            
+            if let matchedUser = validate.filter("username == %@", enteredUsername).first,
+               enteredPassword == matchedUser.password {
+                // Navigate to HomeViewController
+                let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                navigationController?.pushViewController(homeViewController, animated: true)
+            } else {
+                // Show alert for invalid credentials
+                let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("Invalid credentials. Please try again.", comment: ""), preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                present(alertController, animated: true, completion: nil)
             }
         }
     }
-   
+    
     private func capitalizeFirstLetter(_ str: String) -> String {
-            return str.prefix(1).capitalized + str.dropFirst()
-        }
+        return str.prefix(1).capitalized + str.dropFirst()
+    }
     
     @IBAction func regBtnAction(_ sender: Any) {
         let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegViewController") as! RegViewController
-                    navigationController?.pushViewController(secondViewController, animated: true)
+        navigationController?.pushViewController(secondViewController, animated: true)
     }
 }
 

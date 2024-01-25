@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
             self.removeShadowWithAnimation(from: sender)
         }
         switch sender.tag{
-        case 0:
+        case 4:
             let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
                         navigationController?.pushViewController(secondViewController, animated: true)
         default:
