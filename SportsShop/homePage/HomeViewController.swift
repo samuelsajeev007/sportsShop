@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupBackgroundAnimations()
+        setupBackgroundAnimations()
         batButtonOutlet.layer.cornerRadius = 25
         ballButtonOutlet.layer.cornerRadius = 25
         jersyButtonOutlet.layer.cornerRadius = 25

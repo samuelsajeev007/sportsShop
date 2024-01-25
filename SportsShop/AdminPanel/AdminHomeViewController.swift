@@ -16,6 +16,7 @@ class AdminHomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupBackgroundAnimations()
     }
     
 
@@ -30,6 +31,24 @@ extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.cellOptionLabel.text = adminOptions[indexPath.row]
         cell.iconImageview.image = UIImage(named: optionImages[indexPath.row])
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row{
+        case 0:
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            navigationController?.pushViewController(adminViewController, animated: true)
+        case 1:
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            navigationController?.pushViewController(adminViewController, animated: true)
+        case 2:
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            navigationController?.pushViewController(adminViewController, animated: true)
+        case 3:
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            navigationController?.pushViewController(adminViewController, animated: true)
+        default:
+            print("default in admin option selection")
+        }
     }
     
     

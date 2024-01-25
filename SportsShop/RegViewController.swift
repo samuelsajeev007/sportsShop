@@ -27,6 +27,7 @@ class RegViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupBackgroundAnimations()
         regBtnOutlet.layer.cornerRadius = 12
         logoImageView.layer.cornerRadius = 0.5 * logoImageView.bounds.size.width
         dobViewDropDown.layer.masksToBounds = true
@@ -94,4 +95,13 @@ class RegViewController: UIViewController {
     }
     
 
+}
+extension UIViewController{
+        func setupBackgroundAnimations() {
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(red: 128/255, green: 217/255, blue: 88/255, alpha: 1).cgColor] // Set the colors you want
+            gradientLayer.locations = [0.0, 1.0]
+                        view.layer.insertSublayer(gradientLayer, at: 0)
+        }
 }

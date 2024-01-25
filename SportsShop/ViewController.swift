@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupBackgroundAnimation()
         loginBtnOutlet.layer.cornerRadius = 12
         logoImageOutlets.layer.cornerRadius = 0.5 * logoImageOutlets.bounds.size.width
         // self.navigationController?.isNavigationBarHidden = true
@@ -70,5 +71,21 @@ class ViewController: UIViewController {
         let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegViewController") as! RegViewController
         navigationController?.pushViewController(secondViewController, animated: true)
     }
+    private func setupBackgroundAnimation() {
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(red: 128/255, green: 217/255, blue: 88/255, alpha: 1).cgColor] // Set the colors you want
+            gradientLayer.locations = [0.0, 1.0]
+            
+            let animation = CABasicAnimation(keyPath: "locations")
+            animation.fromValue = [0.0, 0.0]
+            animation.toValue = [0.0, 1.0]
+            animation.duration = 3.0 // Set the duration of the animation (in seconds)
+            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            
+            gradientLayer.add(animation, forKey: "animateGradient")
+            
+            view.layer.insertSublayer(gradientLayer, at: 0)
+        }
 }
 
