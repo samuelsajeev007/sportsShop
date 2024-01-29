@@ -16,3 +16,8 @@ class UserDetails:Object{
    //@objc dynamic var gender : String?
 }
 
+class Item: Object {
+    @Persisted var image: Data?
+    @Persisted var quantity: Int = 0
+    @Persisted var amount: Double = 0.0
+}
