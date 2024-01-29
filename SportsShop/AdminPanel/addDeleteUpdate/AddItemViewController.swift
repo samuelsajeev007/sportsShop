@@ -15,6 +15,11 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var quantityTxtFld: UITextField!
     @IBOutlet weak var amountTxtFld: UITextField!
     @IBOutlet weak var itemSubmitButton: UIButton!
+    @IBOutlet weak var itemIdTxtFld: UITextField!
+    
+    @IBOutlet weak var itemTxtFld: UITextField!
+    @IBOutlet weak var itemNameTxtFld: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +28,10 @@ class AddItemViewController: UIViewController {
         setupBackgroundAnimations()
     }
     
+    @IBAction func backButtonMain(_ sender: Any) {
+        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
+        navigationController?.pushViewController(backViewController, animated: true)
+    }
     
     @IBAction func imageSelectButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -47,7 +56,7 @@ class AddItemViewController: UIViewController {
            newItem.image = itemImages.image?.jpegData(compressionQuality: 1.0)
            newItem.quantity = Int(quantityTxtFld.text ?? "") ?? 0
            newItem.amount = Double(amountTxtFld.text ?? "") ?? 0.0
-
+           
            do {
                let realm = try Realm()
                try realm.write {

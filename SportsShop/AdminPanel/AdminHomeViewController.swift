@@ -19,7 +19,11 @@ class AdminHomeViewController: UIViewController {
         setupBackgroundAnimations()
     }
     
-
+    @IBAction func backButtonMain(_ sender: Any) {
+        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(backViewController, animated: true)
+    }
+    
 }
 extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +45,7 @@ extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDat
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             navigationController?.pushViewController(adminViewController, animated: true)
         case 2:
-            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DeleteViewController") as! DeleteViewController
             navigationController?.pushViewController(adminViewController, animated: true)
         case 3:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController

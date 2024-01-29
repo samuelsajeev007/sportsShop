@@ -30,14 +30,14 @@ class RegViewController: UIViewController {
         setupBackgroundAnimations()
         regBtnOutlet.layer.cornerRadius = 12
         logoImageView.layer.cornerRadius = 0.5 * logoImageView.bounds.size.width
-        dobViewDropDown.layer.masksToBounds = true
-        dobViewDropDown.layer.cornerRadius = 4
-        dropDown.dataSource = dropDownValues
-        dropDown.width = dobViewDropDown.frame.width
-        dropDown.cornerRadius = 12
-        dropDown.backgroundColor = .white
-        dobViewDropDown.layer.borderWidth = 1
-        dobViewDropDown.layer.borderColor = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 0.4).cgColor
+        //dobViewDropDown.layer.masksToBounds = true
+//        dobViewDropDown.layer.cornerRadius = 4
+//        dropDown.dataSource = dropDownValues
+//        dropDown.width = dobViewDropDown.frame.width
+//        dropDown.cornerRadius = 12
+//        dropDown.backgroundColor = .white
+//        dobViewDropDown.layer.borderWidth = 1
+//        dobViewDropDown.layer.borderColor = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 0.4).cgColor
     }
     @IBAction func showDropDown(_ sender: Any) {
         //dropDown.anchorView = drpDwnView
@@ -64,7 +64,11 @@ class RegViewController: UIViewController {
             }
         }
     
-  
+    @IBAction func backButtonMain(_ sender: Any) {
+        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(backViewController, animated: true)
+    }
+    
     @IBAction func regAction(_ sender: Any) {
 //        let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
 //                    navigationController?.pushViewController(secondViewController, animated: true)

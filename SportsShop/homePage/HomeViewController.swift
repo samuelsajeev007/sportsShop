@@ -6,6 +6,7 @@
 //
 
 import UIKit
+var buttonVlaue = Int()
 
 class HomeViewController: UIViewController {
     //outlets
@@ -56,10 +57,15 @@ class HomeViewController: UIViewController {
             return IndexPath(item: 0, section: 0)
         }
 
+    @IBAction func backButtonMain(_ sender: Any) {
+        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        navigationController?.pushViewController(backViewController, animated: true)
+    }
     
 
     @IBAction func btnAction(_ sender: UIButton) {
         print(sender.tag)
+        buttonVlaue = sender.tag
         addShadowWithAnimation(to: sender)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.removeShadowWithAnimation(from: sender)

@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         setupBackgroundAnimation()
         loginBtnOutlet.layer.cornerRadius = 12
         logoImageOutlets.layer.cornerRadius = 0.5 * logoImageOutlets.bounds.size.width
-        // self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         print(Realm.Configuration.defaultConfiguration.fileURL)//get url for database realm
     }
     

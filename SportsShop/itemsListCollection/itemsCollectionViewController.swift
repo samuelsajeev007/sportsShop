@@ -30,6 +30,10 @@ class itemsCollectionViewController: UIViewController {
             }
         }
     
+    @IBAction func backButtonMain(_ sender: Any) {
+        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        navigationController?.pushViewController(backViewController, animated: true)
+    }
 }
 extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

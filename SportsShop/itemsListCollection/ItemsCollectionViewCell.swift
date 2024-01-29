@@ -13,6 +13,7 @@ class ItemsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iteamRate: UILabel!
     @IBOutlet weak var itemImages: UIImageView!
     
+    @IBOutlet weak var itemName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
