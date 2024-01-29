@@ -52,17 +52,22 @@ class AddItemViewController: UIViewController {
     }
     
     func saveItemToRealm() {
-           let newItem = Item()
+           let newItem = NewItem()
            newItem.image = itemImages.image?.jpegData(compressionQuality: 1.0)
            newItem.quantity = Int(quantityTxtFld.text ?? "") ?? 0
            newItem.amount = Double(amountTxtFld.text ?? "") ?? 0.0
-           
+           newItem.id = Int(itemIdTxtFld.text ?? "") ?? 0
+        
            do {
                let realm = try Realm()
                try realm.write {
                    realm.add(newItem)
                }
                print("Item added to Realm successfully")
+               let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("Item added  successfully", comment: ""), preferredStyle: .alert)
+               let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+               alertController.addAction(okAction)
+               present(alertController, animated: true, completion: nil)
            } catch {
                print("Error saving item to Realm: \(error)")
            }

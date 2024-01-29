@@ -42,7 +42,7 @@ extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDat
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             navigationController?.pushViewController(adminViewController, animated: true)
         case 1:
-            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateItemViewController") as! UpdateItemViewController
             navigationController?.pushViewController(adminViewController, animated: true)
         case 2:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DeleteViewController") as! DeleteViewController

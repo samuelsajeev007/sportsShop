@@ -11,10 +11,10 @@ import RealmSwift
 class itemsCollectionViewController: UIViewController {
 
     @IBOutlet weak var itemCollections: UICollectionView!
-    var items: Results<Item>?
+    var items: Results<NewItem>?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         itemCollections.register(UINib(nibName: "ItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemsCollectionViewCell")
         fetchItems()
@@ -23,7 +23,8 @@ class itemsCollectionViewController: UIViewController {
             do {
                 let realm = try Realm()
                 // Fetch all items from the Item class
-                items = realm.objects(Item.self)
+               // items = realm.objects(NewItem.self)
+                items = realm.objects(NewItem.self).filter("quantity == \(buttonVlaue)")
                 itemCollections.reloadData()
             } catch {
                 print("Error fetching items: \(error)")
@@ -42,6 +43,7 @@ extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = itemCollections.dequeueReusableCell(withReuseIdentifier: "ItemsCollectionViewCell", for: indexPath)as! ItemsCollectionViewCell
+        cell.itemName.isHidden = true
         if let item = items?[indexPath.item] {
                     cell.configure(with: item)
                 }

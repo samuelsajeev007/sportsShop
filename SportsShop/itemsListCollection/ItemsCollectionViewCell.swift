@@ -18,9 +18,10 @@ class ItemsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configure(with item: Item) {
+    func configure(with item: NewItem) {
             itemCount.text = "\(item.quantity)"
             iteamRate.text = "\(item.amount)"
+            itemName.text = "\(item.id)"
             
             if let imageData = item.image {
                 itemImages.image = UIImage(data: imageData)

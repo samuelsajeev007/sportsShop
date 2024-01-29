@@ -25,6 +25,7 @@
 		E93C038E2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C038D2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift */; };
 		E93C03912B627F5B006ABCF9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */; };
 		E95D3A452B678162001D90FF /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D3A442B678162001D90FF /* DeleteViewController.swift */; };
+		E95D3A472B67A5D5001D90FF /* UpdateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */; };
 		E9ED26002B621EE000C16251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9ED25FE2B621EE000C16251 /* Main.storyboard */; };
 		E9ED26032B62219C00C16251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9ED26012B62219C00C16251 /* LaunchScreen.storyboard */; };
 		E9ED26062B6230F600C16251 /* ProfileListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED26042B6230F600C16251 /* ProfileListTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 		E93C038D2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOpionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		E95D3A442B678162001D90FF /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
+		E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemViewController.swift; sourceTree = "<group>"; };
 		E9ED25FF2B621EE000C16251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9ED26022B62219C00C16251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9ED26042B6230F600C16251 /* ProfileListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */,
 				E95D3A442B678162001D90FF /* DeleteViewController.swift */,
+				E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */,
 			);
 			path = addDeleteUpdate;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				18FA44612B5502D300729724 /* RegViewController.swift in Sources */,
 				18FA44662B55368D00729724 /* slideImageCollectionViewCell.swift in Sources */,
 				18FA44702B554D5600729724 /* ProfileViewController.swift in Sources */,
+				E95D3A472B67A5D5001D90FF /* UpdateItemViewController.swift in Sources */,
 				E93C038E2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift in Sources */,
 				E93C038C2B625E5D006ABCF9 /* AdminHomeViewController.swift in Sources */,
 				E93C03912B627F5B006ABCF9 /* AddItemViewController.swift in Sources */,

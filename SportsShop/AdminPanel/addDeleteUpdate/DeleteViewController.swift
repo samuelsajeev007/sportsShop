@@ -17,9 +17,14 @@ class DeleteViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backButtonMain(_ sender: Any) {
+        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
+        navigationController?.pushViewController(backViewController, animated: true)
+    }
+    
     @IBAction func deleteBtnAction(_ sender: Any) {
         deleteItemFromRealm()
+        
     }
     
 
@@ -34,7 +39,7 @@ class DeleteViewController: UIViewController {
                let realm = try Realm()
                
                // Fetch the item with the specified quantity from Realm
-               let itemsToDelete = realm.objects(Item.self).filter("quantity == %@", quantity)
+               let itemsToDelete = realm.objects(NewItem.self).filter("quantity == %@", quantity)
 
                if !itemsToDelete.isEmpty {
                    try realm.write {
@@ -45,8 +50,7 @@ class DeleteViewController: UIViewController {
                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                        alertController.addAction(okAction)
                        present(alertController, animated: true, completion: nil)
-                       let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
-                       navigationController?.pushViewController(backViewController, animated: true)
+                      
                    }
                } else {
                    print("No items found with quantity \(quantity)")

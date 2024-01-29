@@ -90,6 +90,7 @@
                 <outlet property="iteamRate" destination="mMv-b3-D00" id="ulh-dg-f2P"/>
                 <outlet property="itemCount" destination="iWp-gE-OSa" id="lZP-lH-hdv"/>
                 <outlet property="itemImages" destination="Kab-Js-tWm" id="Q4H-Wr-eyH"/>
+                <outlet property="itemName" destination="Vu3-ie-09z" id="dpX-a0-se2"/>
             </connections>
             <point key="canvasLocation" x="222.90076335877862" y="24.647887323943664"/>
         </collectionViewCell>

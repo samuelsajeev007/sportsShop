@@ -17,7 +17,16 @@ class UserDetails:Object{
 }
 
 class Item: Object {
+    
     @Persisted var image: Data?
     @Persisted var quantity: Int = 0
     @Persisted var amount: Double = 0.0
+}
+
+class NewItem: Object {
+    @Persisted var image: Data?
+    @Persisted var quantity: Int = 0
+    @Persisted var amount: Double = 0.0
+    @Persisted var id: Int = 0
+    
 }
