@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+var storeUserName = ""
 class UserData {
     static let shared = UserData()
     var firstLetter: String?
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //view.overrideUserInterfaceStyle = .dark
         setupBackgroundAnimation()
         loginBtnOutlet.layer.cornerRadius = 12
         logoImageOutlets.layer.cornerRadius = 0.5 * logoImageOutlets.bounds.size.width
@@ -50,6 +52,8 @@ class ViewController: UIViewController {
             
             if let matchedUser = validate.filter("username == %@", enteredUsername).first,
                enteredPassword == matchedUser.password {
+                storeUserName = enteredUsername
+                print(storeUserName)
                 // Navigate to HomeViewController
                 let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 navigationController?.pushViewController(homeViewController, animated: true)

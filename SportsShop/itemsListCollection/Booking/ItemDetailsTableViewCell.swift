@@ -1,16 +1,17 @@
 //
-//  ProfileListTableViewCell.swift
+//  ItemDetailsTableViewCell.swift
 //  SportsShop
 //
-//  Created by Samuel Sajeev on 25/01/24.
+//  Created by Samuel Sajeev on 31/01/24.
 //
 
 import UIKit
 
-class ProfileListTableViewCell: UITableViewCell {
-    @IBOutlet weak var profileLabelOptions: UILabel!
+class ItemDetailsTableViewCell: UITableViewCell {
+    @IBOutlet weak var itemIdLabelOutlet: UILabel!
+    @IBOutlet weak var amountLabelOutlet: UILabel!
     
-    @IBOutlet weak var profileLabelIcons: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

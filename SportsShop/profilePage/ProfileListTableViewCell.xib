@@ -45,6 +45,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="profileLabelIcons" destination="fZ7-ge-0gu" id="VHf-cw-Mzo"/>
+                <outlet property="profileLabelOptions" destination="Bhk-Dd-rJM" id="ygM-j2-PVP"/>
+            </connections>
             <point key="canvasLocation" x="134.35114503816794" y="-2.8169014084507045"/>
         </tableViewCell>
     </objects>

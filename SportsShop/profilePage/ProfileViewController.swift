@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var profileButnOutlet: UIButton!
     @IBOutlet weak var profileTableView: UITableView!
+    var profileOptions = ["My PhoneNo","My Bookings","Change Password","Switch mode Dark/Light"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +36,12 @@ class ProfileViewController: UIViewController {
 }
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return profileOptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = profileTableView.dequeueReusableCell(withIdentifier: "ProfileListTableViewCell", for: indexPath)as! ProfileListTableViewCell
+        cell.profileLabelOptions.text = profileOptions[indexPath.row]
         return cell
     }
     

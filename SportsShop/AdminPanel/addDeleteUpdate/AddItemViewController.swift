@@ -8,14 +8,15 @@
 import UIKit
 import RealmSwift
 
-class AddItemViewController: UIViewController {
+class AddItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addLabelOutlet: UILabel!
     
+    @IBOutlet weak var labelItemNoListOutlet: UILabel!
     @IBOutlet weak var itemImages: UIImageView!
-    @IBOutlet weak var quantityTxtFld: UITextField!
-    @IBOutlet weak var amountTxtFld: UITextField!
+    @IBOutlet weak var quantityTxtFld: UITextField! //actually it is id no
+    @IBOutlet weak var amountTxtFld: UITextField! // amount
     @IBOutlet weak var itemSubmitButton: UIButton!
-    @IBOutlet weak var itemIdTxtFld: UITextField!
+    @IBOutlet weak var itemIdTxtFld: UITextField! // item no
     
     @IBOutlet weak var itemTxtFld: UITextField!
     @IBOutlet weak var itemNameTxtFld: UITextField!
@@ -24,9 +25,18 @@ class AddItemViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        itemIdTxtFld.delegate = self
         itemSubmitButton.layer.cornerRadius = 12
         setupBackgroundAnimations()
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+           if textField == itemIdTxtFld {
+               labelItemNoListOutlet.isHidden = true
+           } else {
+               labelItemNoListOutlet.isHidden = false
+           }
+       }
     
     @IBAction func backButtonMain(_ sender: Any) {
         let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
@@ -44,10 +54,25 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func itemSubmitAction(_ sender: Any) {
-        saveItemToRealm()
-        addLabelOutlet.isHidden = false
-        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
-        navigationController?.pushViewController(backViewController, animated: true)
+        if let quantityText = quantityTxtFld.text,
+           let amountText = amountTxtFld.text,
+           let itemIdText = itemIdTxtFld.text,
+           let itemId = Int(itemIdText),
+           !quantityText.isEmpty,
+           !amountText.isEmpty,
+           !itemIdText.isEmpty,
+           [0, 1, 2, 3].contains(itemId),
+           itemImages.image != nil {
+            saveItemToRealm()
+            addLabelOutlet.isHidden = false
+        }
+        let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("Fill all items", comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        
+//        let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminHomeViewController") as! AdminHomeViewController
+//        navigationController?.pushViewController(backViewController, animated: true)
         
     }
     
