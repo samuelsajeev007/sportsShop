@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+var amounts = String()
+var itemIdBokking = String()
 class BookingViewController: UIViewController {
         var selectedItem: NewItem?
         var selectedQuantity: Int?
+        
 //    outlets
     
     @IBOutlet weak var IdNoLabelOutlet: UILabel!
@@ -63,10 +65,14 @@ extension BookingViewController: UITableViewDelegate, UITableViewDataSource{
             if let item = selectedItem, let quantity = selectedQuantity {
                 cell.amountLabelOutlet.text = String(item.amount)
                 cell.itemIdLabelOutlet.text = String(item.quantity)
+                amounts = cell.amountLabelOutlet.text!
+                itemIdBokking = cell.itemIdLabelOutlet.text!
+                
             }
             return cell
         case 2:
             let cell = bookingTableView.dequeueReusableCell(withIdentifier: "BookingTableViewCell", for: indexPath) as! BookingTableViewCell
+            cell.confirmBtnOutlet.addTarget(self, action: #selector(pageChange), for: .touchUpInside)
             return cell
         default:
             print("hello")
@@ -74,5 +80,9 @@ extension BookingViewController: UITableViewDelegate, UITableViewDataSource{
         return UITableViewCell()
     }
     
+    @objc func pageChange(){
+        let confirmPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmImageViewController") as! ConfirmImageViewController
+        navigationController?.pushViewController(confirmPage, animated: true)
+    }
     
 }

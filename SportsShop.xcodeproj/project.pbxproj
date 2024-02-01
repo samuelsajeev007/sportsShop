@@ -26,6 +26,8 @@
 		E93C03912B627F5B006ABCF9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */; };
 		E95D3A452B678162001D90FF /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D3A442B678162001D90FF /* DeleteViewController.swift */; };
 		E95D3A472B67A5D5001D90FF /* UpdateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */; };
+		E977E0C92B6B7C73004D5BA5 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977E0C82B6B7C73004D5BA5 /* ConfirmImageViewController.swift */; };
+		E977E0CB2B6B80B7004D5BA5 /* bookingConfirm.gif in Resources */ = {isa = PBXBuildFile; fileRef = E977E0CA2B6B80B7004D5BA5 /* bookingConfirm.gif */; };
 		E9AD000D2B6A0400002ACFA5 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD000C2B6A0400002ACFA5 /* BookingViewController.swift */; };
 		E9AD004A2B6A4B06002ACFA5 /* ItemImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD00482B6A4B06002ACFA5 /* ItemImageTableViewCell.swift */; };
 		E9AD004B2B6A4B06002ACFA5 /* ItemImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AD00492B6A4B06002ACFA5 /* ItemImageTableViewCell.xib */; };
@@ -64,6 +66,8 @@
 		E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		E95D3A442B678162001D90FF /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 		E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemViewController.swift; sourceTree = "<group>"; };
+		E977E0C82B6B7C73004D5BA5 /* ConfirmImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmImageViewController.swift; sourceTree = "<group>"; };
+		E977E0CA2B6B80B7004D5BA5 /* bookingConfirm.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bookingConfirm.gif; sourceTree = "<group>"; };
 		E9AD000C2B6A0400002ACFA5 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		E9AD00482B6A4B06002ACFA5 /* ItemImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageTableViewCell.swift; sourceTree = "<group>"; };
 		E9AD00492B6A4B06002ACFA5 /* ItemImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		18FA44462B54F44B00729724 /* SportsShop */ = {
 			isa = PBXGroup;
 			children = (
+				E977E0CA2B6B80B7004D5BA5 /* bookingConfirm.gif */,
 				E93C038A2B625E21006ABCF9 /* AdminPanel */,
 				E9ED26012B62219C00C16251 /* LaunchScreen.storyboard */,
 				E9ED25FE2B621EE000C16251 /* Main.storyboard */,
@@ -125,7 +130,6 @@
 				18FA44502B54F44D00729724 /* Assets.xcassets */,
 				18FA44522B54F44D00729724 /* LaunchScreen.storyboard */,
 				18FA44552B54F44D00729724 /* Info.plist */,
-				E9ED26082B62386300C16251 /* usersClassObjects.swift */,
 			);
 			path = SportsShop;
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 				18FA44682B5544FB00729724 /* itemsCollectionViewController.swift */,
 				18FA446A2B55459900729724 /* ItemsCollectionViewCell.swift */,
 				18FA446B2B55459900729724 /* ItemsCollectionViewCell.xib */,
+				E9ED26082B62386300C16251 /* usersClassObjects.swift */,
 			);
 			path = itemsListCollection;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				E9AD004D2B6A4C58002ACFA5 /* ItemDetailsTableViewCell.xib */,
 				E9AD00502B6A4F5B002ACFA5 /* BookingTableViewCell.swift */,
 				E9AD00512B6A4F5B002ACFA5 /* BookingTableViewCell.xib */,
+				E977E0C82B6B7C73004D5BA5 /* ConfirmImageViewController.swift */,
 			);
 			path = Booking;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				18FA44542B54F44D00729724 /* LaunchScreen.storyboard in Resources */,
 				E9ED26002B621EE000C16251 /* Main.storyboard in Resources */,
 				18FA446D2B55459900729724 /* ItemsCollectionViewCell.xib in Resources */,
+				E977E0CB2B6B80B7004D5BA5 /* bookingConfirm.gif in Resources */,
 				18FA44512B54F44D00729724 /* Assets.xcassets in Resources */,
 				E9AD00532B6A4F5B002ACFA5 /* BookingTableViewCell.xib in Resources */,
 				18FA444F2B54F44B00729724 /* Main.storyboard in Resources */,
@@ -343,6 +350,7 @@
 				E95D3A452B678162001D90FF /* DeleteViewController.swift in Sources */,
 				E9ED26062B6230F600C16251 /* ProfileListTableViewCell.swift in Sources */,
 				18FA44482B54F44B00729724 /* AppDelegate.swift in Sources */,
+				E977E0C92B6B7C73004D5BA5 /* ConfirmImageViewController.swift in Sources */,
 				18FA44612B5502D300729724 /* RegViewController.swift in Sources */,
 				18FA44662B55368D00729724 /* slideImageCollectionViewCell.swift in Sources */,
 				18FA44702B554D5600729724 /* ProfileViewController.swift in Sources */,
