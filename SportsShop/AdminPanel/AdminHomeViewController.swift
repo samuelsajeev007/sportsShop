@@ -48,8 +48,12 @@ extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDat
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DeleteViewController") as! DeleteViewController
             navigationController?.pushViewController(adminViewController, animated: true)
         case 3:
+            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminBookingListViewController") as! AdminBookingListViewController
+            navigationController?.pushViewController(adminViewController, animated: true)
+        case 4:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             navigationController?.pushViewController(adminViewController, animated: true)
+            
         default:
             print("default in admin option selection")
         }

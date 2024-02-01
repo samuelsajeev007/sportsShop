@@ -1022,7 +1022,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5iX-dI-5YZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="1358"/>
+            <point key="canvasLocation" x="1768.7022900763359" y="1357.7464788732395"/>
         </scene>
         <!--Update Item View Controller-->
         <scene sceneID="4ZO-lm-lg3">
@@ -1126,6 +1126,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECY-Yj-E0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2476" y="1358"/>
+        </scene>
+        <!--Admin Booking List View Controller-->
+        <scene sceneID="L5Z-PZ-Cbp">
+            <objects>
+                <viewController storyboardIdentifier="AdminBookingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bLz-NA-APP" customClass="AdminBookingListViewController" customModule="SportsShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eKQ-Ic-Skj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8PN-Za-iCN">
+                                <rect key="frame" x="0.0" y="106" width="393" height="712"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bLz-NA-APP" id="71v-1y-VIQ"/>
+                                    <outlet property="delegate" destination="bLz-NA-APP" id="2Xs-Jv-vd5"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-DI-cRf">
+                                <rect key="frame" x="10" y="59" width="47" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="Tkl-pz-wg0"/>
+                                    <constraint firstAttribute="height" constant="47" id="mvq-ji-MAA"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backMainButton:" destination="bLz-NA-APP" eventType="touchUpInside" id="JPu-6E-fG9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y5k-dW-5yV"/>
+                        <color key="backgroundColor" red="0.83595913649999998" green="0.99341219660000002" blue="0.87313055989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yX3-DI-cRf" firstAttribute="leading" secondItem="Y5k-dW-5yV" secondAttribute="leading" constant="10" id="6hO-gg-2Sg"/>
+                            <constraint firstItem="8PN-Za-iCN" firstAttribute="top" secondItem="Y5k-dW-5yV" secondAttribute="top" constant="47" id="Iro-DU-P4k"/>
+                            <constraint firstItem="Y5k-dW-5yV" firstAttribute="bottom" secondItem="8PN-Za-iCN" secondAttribute="bottom" id="U3C-iU-SHe"/>
+                            <constraint firstItem="Y5k-dW-5yV" firstAttribute="trailing" secondItem="8PN-Za-iCN" secondAttribute="trailing" id="hqN-HC-YIe"/>
+                            <constraint firstItem="8PN-Za-iCN" firstAttribute="leading" secondItem="Y5k-dW-5yV" secondAttribute="leading" id="p41-AH-llk"/>
+                            <constraint firstItem="yX3-DI-cRf" firstAttribute="top" secondItem="Y5k-dW-5yV" secondAttribute="top" id="vWE-ka-sfx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookingTableView" destination="8PN-Za-iCN" id="xJB-c6-uah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jC-Ae-e1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3174.8091603053435" y="1357.7464788732395"/>
         </scene>
     </scenes>
     <resources>
