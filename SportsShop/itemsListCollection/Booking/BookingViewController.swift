@@ -8,6 +8,7 @@
 import UIKit
 var amounts = String()
 var itemIdBokking = String()
+var notFillAllBooking = false
 class BookingViewController: UIViewController {
         var selectedItem: NewItem?
         var selectedQuantity: Int?
@@ -81,8 +82,11 @@ extension BookingViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     @objc func pageChange(){
-        let confirmPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmImageViewController") as! ConfirmImageViewController
-        navigationController?.pushViewController(confirmPage, animated: true)
+        if notFillAllBooking{
+            let confirmPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmImageViewController") as! ConfirmImageViewController
+            navigationController?.pushViewController(confirmPage, animated: true)
+        }
     }
     
 }
+

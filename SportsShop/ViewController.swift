@@ -8,6 +8,8 @@
 import UIKit
 import RealmSwift
 var storeUserName = ""
+var darkMode = false
+var iconClick = true
 class UserData {
     static let shared = UserData()
     var firstLetter: String?

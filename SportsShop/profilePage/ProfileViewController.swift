@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var profileButnOutlet: UIButton!
     @IBOutlet weak var profileTableView: UITableView!
-    var profileOptions = ["My PhoneNo","My Bookings","Change Password","Switch mode Dark/Light"]
+    var profileOptions = ["My PhoneNo","My Bookings","Switch mode Dark/Light"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,35 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = profileTableView.dequeueReusableCell(withIdentifier: "ProfileListTableViewCell", for: indexPath)as! ProfileListTableViewCell
         cell.profileLabelOptions.text = profileOptions[indexPath.row]
+        if indexPath.row == 0{
+            cell.profileLabelOptions.text = storeUserName
+        }
+        
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row{
+        case 1:
+            let myBookViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserBookingViewController") as! UserBookingViewController
+            navigationController?.pushViewController(myBookViewController, animated: true)
+        case 2:
+            let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("Want to Switch mode", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { [self] (_) in
+                if iconClick {
+                     darkMode = true
+                      } else {
+                          darkMode = false
+
+                        
+                    }
+                iconClick = !iconClick
+
+            }
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        default:
+            print("issue in profile page")
+        }
     }
     
     

@@ -47,6 +47,7 @@ extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = itemCollections.dequeueReusableCell(withReuseIdentifier: "ItemsCollectionViewCell", for: indexPath)as! ItemsCollectionViewCell
+        //cell.backGroundView.cellGradient()
         cell.itemName.isHidden = true
         if let item = items?[indexPath.item] {
                     cell.configure(with: item)
@@ -54,6 +55,7 @@ extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionVi
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if let selectedItem = items?[indexPath.item] {
               
                let selectedQuantity = selectedItem.quantity
@@ -69,4 +71,18 @@ extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionVi
     }
     
     
+}
+
+extension UIView
+{
+    func cellGradient()
+    {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2).cgColor,UIColor(red: 207/255, green: 207/255, blue: 207/255, alpha: 0.4).cgColor]
+        gradientLayer.cornerRadius = layer.cornerRadius
+        gradientLayer.startPoint = CGPoint(x: 0,y:0)
+        gradientLayer.endPoint = CGPoint(x:1,y:0)
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

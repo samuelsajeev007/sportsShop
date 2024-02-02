@@ -21,6 +21,8 @@
 		18FA446C2B55459900729724 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA446A2B55459900729724 /* ItemsCollectionViewCell.swift */; };
 		18FA446D2B55459900729724 /* ItemsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA446B2B55459900729724 /* ItemsCollectionViewCell.xib */; };
 		18FA44702B554D5600729724 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA446F2B554D5600729724 /* ProfileViewController.swift */; };
+		E92BA04F2B6D05910032C82F /* UserBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BA04E2B6D05910032C82F /* UserBookingViewController.swift */; };
+		E92BA0512B6D08F00032C82F /* MyBookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BA0502B6D08F00032C82F /* MyBookingTableViewCell.swift */; };
 		E93C038C2B625E5D006ABCF9 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C038B2B625E5D006ABCF9 /* AdminHomeViewController.swift */; };
 		E93C038E2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C038D2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift */; };
 		E93C03912B627F5B006ABCF9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */; };
@@ -65,6 +67,8 @@
 		18FA446B2B55459900729724 /* ItemsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsCollectionViewCell.xib; sourceTree = "<group>"; };
 		18FA446F2B554D5600729724 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AE0C96AB13478BF8FB1E81EE /* Pods_SportsShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92BA04E2B6D05910032C82F /* UserBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBookingViewController.swift; sourceTree = "<group>"; };
+		E92BA0502B6D08F00032C82F /* MyBookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookingTableViewCell.swift; sourceTree = "<group>"; };
 		E93C038B2B625E5D006ABCF9 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		E93C038D2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOpionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 				18FA446F2B554D5600729724 /* ProfileViewController.swift */,
 				E9ED26042B6230F600C16251 /* ProfileListTableViewCell.swift */,
 				E9ED26052B6230F600C16251 /* ProfileListTableViewCell.xib */,
+				E92BA04E2B6D05910032C82F /* UserBookingViewController.swift */,
+				E92BA0502B6D08F00032C82F /* MyBookingTableViewCell.swift */,
 			);
 			path = profilePage;
 			sourceTree = "<group>";
@@ -379,10 +385,12 @@
 				18FA44662B55368D00729724 /* slideImageCollectionViewCell.swift in Sources */,
 				18FA44702B554D5600729724 /* ProfileViewController.swift in Sources */,
 				E95D3A472B67A5D5001D90FF /* UpdateItemViewController.swift in Sources */,
+				E92BA04F2B6D05910032C82F /* UserBookingViewController.swift in Sources */,
 				E9AD000D2B6A0400002ACFA5 /* BookingViewController.swift in Sources */,
 				E93C038E2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift in Sources */,
 				E93C038C2B625E5D006ABCF9 /* AdminHomeViewController.swift in Sources */,
 				E93C03912B627F5B006ABCF9 /* AddItemViewController.swift in Sources */,
+				E92BA0512B6D08F00032C82F /* MyBookingTableViewCell.swift in Sources */,
 				18FA444A2B54F44B00729724 /* SceneDelegate.swift in Sources */,
 				18FA44692B5544FB00729724 /* itemsCollectionViewController.swift in Sources */,
 			);

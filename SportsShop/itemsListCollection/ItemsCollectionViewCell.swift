@@ -12,11 +12,16 @@ class ItemsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemCount: UILabel!
     @IBOutlet weak var iteamRate: UILabel!
     @IBOutlet weak var itemImages: UIImageView!
+    @IBOutlet weak var backGroundView: UIView!
     
     @IBOutlet weak var itemName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backGroundView.layer.masksToBounds = true
+        backGroundView.layer.cornerRadius = 13
+//        backGroundView.layer.borderWidth = 1
+//        backGroundView.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
     }
     func configure(with item: NewItem) {
             itemCount.text = "\(item.quantity)"
