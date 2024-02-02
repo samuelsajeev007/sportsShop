@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupBackgroundAnimations()
+//        setupBackgroundAnimations()
         profileTableView.register(UINib(nibName: "ProfileListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileListTableViewCell")
         logoImageView.layer.cornerRadius = 0.5 * logoImageView.bounds.size.width
         profileButnOutlet.layer.cornerRadius = 0.5 * profileButnOutlet.bounds.size.width

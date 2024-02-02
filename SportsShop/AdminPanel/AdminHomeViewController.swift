@@ -9,14 +9,14 @@ import UIKit
 
 class AdminHomeViewController: UIViewController {
     @IBOutlet weak var adminHomeCollectionView: UICollectionView!
-    var adminOptions = ["Add items","Update items","Delete items","Bookings","sign out"]
-    var optionImages = ["add-file","update","delete-account","add-to-cart","logOut"]
+    var adminOptions = ["Add items","Delete items","Bookings","sign out"]
+    var optionImages = ["plus","min","shopping-cart","logoutAdmin"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupBackgroundAnimations()
+//        setupBackgroundAnimations()
     }
     
     @IBAction func backButtonMain(_ sender: Any) {
@@ -27,7 +27,7 @@ class AdminHomeViewController: UIViewController {
 }
 extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,16 +41,16 @@ extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDat
         case 0:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             navigationController?.pushViewController(adminViewController, animated: true)
+//        case 1:
+//            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateItemViewController") as! UpdateItemViewController
+//            navigationController?.pushViewController(adminViewController, animated: true)
         case 1:
-            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateItemViewController") as! UpdateItemViewController
-            navigationController?.pushViewController(adminViewController, animated: true)
-        case 2:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DeleteViewController") as! DeleteViewController
             navigationController?.pushViewController(adminViewController, animated: true)
-        case 3:
+        case 2:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminBookingListViewController") as! AdminBookingListViewController
             navigationController?.pushViewController(adminViewController, animated: true)
-        case 4:
+        case 3:
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             navigationController?.pushViewController(adminViewController, animated: true)
             

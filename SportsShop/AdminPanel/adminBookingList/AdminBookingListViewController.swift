@@ -37,8 +37,10 @@ extension AdminBookingListViewController : UITableViewDelegate, UITableViewDataS
         let cell = bookingTableView.dequeueReusableCell(withIdentifier: "detailsBookingTableViewCell", for: indexPath)as! detailsBookingTableViewCell
         if tickCheckArray.contains(indexPath.row){
             cell.tickImageView.image = UIImage(named: "greenTick")
+            cell.deliverdButtonOutlet.backgroundColor = UIColor.gray
         }else{
             cell.tickImageView.image = UIImage(named: "redTick")
+            cell.deliverdButtonOutlet.backgroundColor = UIColor(red: 0/255, green: 162/255, blue: 0/255, alpha: 0.5)
         }
         if let bookingDetails = bookingDetailsArray?[indexPath.row] {
                     cell.configureCell(with: bookingDetails)

@@ -27,7 +27,9 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         itemIdTxtFld.delegate = self
         itemSubmitButton.layer.cornerRadius = 12
-        setupBackgroundAnimations()
+        itemSubmitButton.layer.borderWidth = 2
+        itemSubmitButton.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+//        setupBackgroundAnimations()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

@@ -31,6 +31,8 @@ class detailsBookingTableViewCell: UITableViewCell {
         backgroundViewBokking.layer.masksToBounds = true
         backgroundViewBokking.layer.cornerRadius = 13
         deliverdButtonOutlet.layer.cornerRadius = 13
+        backgroundViewBokking.layer.borderWidth = 1
+        backgroundViewBokking.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

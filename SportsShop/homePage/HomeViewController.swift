@@ -28,14 +28,27 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupBackgroundAnimations()
-        setupBackgroundAnimations()
+//        setupBackgroundAnimations()
+//        setupBackgroundAnimations()
         batButtonOutlet.layer.cornerRadius = 25
         ballButtonOutlet.layer.cornerRadius = 25
         jersyButtonOutlet.layer.cornerRadius = 25
         bootButtonOutlet.layer.cornerRadius = 25
         profileButtonOutlet.layer.cornerRadius = 25
         logOutButtonOutlet.layer.cornerRadius = 25
+        batButtonOutlet.layer.borderWidth = 2
+        ballButtonOutlet.layer.borderWidth = 2
+        jersyButtonOutlet.layer.borderWidth = 2
+        bootButtonOutlet.layer.borderWidth = 2
+        profileButtonOutlet.layer.borderWidth = 2
+        logOutButtonOutlet.layer.borderWidth = 2
+        batButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+        ballButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+        jersyButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+        bootButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+        profileButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+        logOutButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
+        
         startImageSlideTimer()
     }
     func startImageSlideTimer() {

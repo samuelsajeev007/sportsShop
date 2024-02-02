@@ -10,11 +10,15 @@ import RealmSwift
 
 class DeleteViewController: UIViewController {
 
+    @IBOutlet weak var deleteBtnOutlet: UIButton!
     @IBOutlet weak var nameTxtFld: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        deleteBtnOutlet.layer.borderWidth = 2
+        deleteBtnOutlet.layer.borderColor = UIColor.red.cgColor
+        deleteBtnOutlet.layer.cornerRadius = 12
     }
     
     @IBAction func backButtonMain(_ sender: Any) {

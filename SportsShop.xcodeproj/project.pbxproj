@@ -24,6 +24,7 @@
 		E93C038C2B625E5D006ABCF9 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C038B2B625E5D006ABCF9 /* AdminHomeViewController.swift */; };
 		E93C038E2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C038D2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift */; };
 		E93C03912B627F5B006ABCF9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */; };
+		E94647852B6CB5930003C831 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = E94647842B6CB5930003C831 /* back.png */; };
 		E95D3A452B678162001D90FF /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D3A442B678162001D90FF /* DeleteViewController.swift */; };
 		E95D3A472B67A5D5001D90FF /* UpdateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */; };
 		E977E0C92B6B7C73004D5BA5 /* ConfirmImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977E0C82B6B7C73004D5BA5 /* ConfirmImageViewController.swift */; };
@@ -67,6 +68,7 @@
 		E93C038B2B625E5D006ABCF9 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		E93C038D2B62634B006ABCF9 /* AdminOpionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOpionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E93C03902B627F5B006ABCF9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		E94647842B6CB5930003C831 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		E95D3A442B678162001D90FF /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 		E95D3A462B67A5D5001D90FF /* UpdateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemViewController.swift; sourceTree = "<group>"; };
 		E977E0C82B6B7C73004D5BA5 /* ConfirmImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmImageViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		18FA44462B54F44B00729724 /* SportsShop */ = {
 			isa = PBXGroup;
 			children = (
+				E94647842B6CB5930003C831 /* back.png */,
 				E977E0CA2B6B80B7004D5BA5 /* bookingConfirm.gif */,
 				E93C038A2B625E21006ABCF9 /* AdminPanel */,
 				E9ED26012B62219C00C16251 /* LaunchScreen.storyboard */,
@@ -300,6 +303,7 @@
 				E9ED26072B6230F600C16251 /* ProfileListTableViewCell.xib in Resources */,
 				18FA44542B54F44D00729724 /* LaunchScreen.storyboard in Resources */,
 				E9ED26002B621EE000C16251 /* Main.storyboard in Resources */,
+				E94647852B6CB5930003C831 /* back.png in Resources */,
 				18FA446D2B55459900729724 /* ItemsCollectionViewCell.xib in Resources */,
 				E977E0CB2B6B80B7004D5BA5 /* bookingConfirm.gif in Resources */,
 				18FA44512B54F44D00729724 /* Assets.xcassets in Resources */,

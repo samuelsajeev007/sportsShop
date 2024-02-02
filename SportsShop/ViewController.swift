@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameTxtFld: UITextField!
     @IBOutlet weak var loginBtnOutlet: UIButton!
     
+    @IBOutlet weak var sportsButton: UIButton!
     @IBOutlet weak var regBtnOutlet: UIButton!
     @IBOutlet weak var passwordTxtFld: UITextField!
     
@@ -27,15 +28,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //view.overrideUserInterfaceStyle = .dark
-        setupBackgroundAnimation()
+        //setupBackgroundAnimation()
         loginBtnOutlet.layer.cornerRadius = 12
         logoImageOutlets.layer.cornerRadius = 0.5 * logoImageOutlets.bounds.size.width
+        sportsButton.layer.cornerRadius = 0.5 * sportsButton.bounds.size.width
         self.navigationController?.isNavigationBarHidden = true
+        loginBtnOutlet.layer.borderWidth = 2
+        loginBtnOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
         print(Realm.Configuration.defaultConfiguration.fileURL)//get url for database realm
     }
     
     
     @IBAction func loginBtnAction(_ sender: Any) {
+        loginBtnOutlet.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7)
         guard let enteredUsername = userNameTxtFld.text, !enteredUsername.isEmpty,
               let enteredPassword = passwordTxtFld.text, !enteredPassword.isEmpty else {
             // Handle the case where username or password is empty
@@ -65,6 +70,7 @@ class ViewController: UIViewController {
                 present(alertController, animated: true, completion: nil)
             }
         }
+        loginBtnOutlet.backgroundColor = UIColor.white
     }
     
     private func capitalizeFirstLetter(_ str: String) -> String {
@@ -75,22 +81,22 @@ class ViewController: UIViewController {
         let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegViewController") as! RegViewController
         navigationController?.pushViewController(secondViewController, animated: true)
     }
-    private func setupBackgroundAnimation() {
-            let gradientLayer = CAGradientLayer()
-            gradientLayer.frame = view.bounds
-        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(red: 128/255, green: 217/255, blue: 88/255, alpha: 1).cgColor] // Set the colors you want
-            gradientLayer.locations = [0.0, 1.0]
-            
-            let animation = CABasicAnimation(keyPath: "locations")
-            animation.fromValue = [0.0, 0.0]
-            animation.toValue = [0.0, 1.0]
-            animation.duration = 3.0 // Set the duration of the animation (in seconds)
-            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            
-            gradientLayer.add(animation, forKey: "animateGradient")
-            
-            view.layer.insertSublayer(gradientLayer, at: 0)
-        }
+//    private func setupBackgroundAnimation() {
+//            let gradientLayer = CAGradientLayer()
+//            gradientLayer.frame = view.bounds
+//        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(red: 128/255, green: 217/255, blue: 88/255, alpha: 1).cgColor] // Set the colors you want
+//            gradientLayer.locations = [0.0, 1.0]
+//            
+//            let animation = CABasicAnimation(keyPath: "locations")
+//            animation.fromValue = [0.0, 0.0]
+//            animation.toValue = [0.0, 1.0]
+//            animation.duration = 3.0 // Set the duration of the animation (in seconds)
+//            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+//            
+//            gradientLayer.add(animation, forKey: "animateGradient")
+//            
+//            view.layer.insertSublayer(gradientLayer, at: 0)
+//        }
 }
 
 
