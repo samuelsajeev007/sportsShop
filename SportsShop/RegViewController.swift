@@ -10,7 +10,7 @@ import DropDown
 import RealmSwift
 //var genderIs = String()
 
-class RegViewController: UIViewController {
+class RegViewController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var usrNameTxtFld: UITextField!
     @IBOutlet weak var phNumberTxtFld: UITextField!
     @IBOutlet weak var ageTxtFld: UITextField!
@@ -40,7 +40,22 @@ class RegViewController: UIViewController {
 //        dropDown.backgroundColor = .white
 //        dobViewDropDown.layer.borderWidth = 1
 //        dobViewDropDown.layer.borderColor = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 0.4).cgColor
+        usrNameTxtFld.delegate = self
+        phNumberTxtFld.delegate = self
+        phNumberTxtFld.keyboardAppearance = .default
+
     }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+           if textField == usrNameTxtFld {
+               usrNameTxtFld.becomeFirstResponder()
+           } else {
+           }
+            if textField == phNumberTxtFld {
+                phNumberTxtFld.becomeFirstResponder()
+            } else {
+            }
+       }
+    //becomeFirstResponder()
     @IBAction func showDropDown(_ sender: Any) {
         //dropDown.anchorView = drpDwnView
         dropDown.show()
@@ -75,7 +90,7 @@ class RegViewController: UIViewController {
 //        let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
 //                    navigationController?.pushViewController(secondViewController, animated: true)
         
-        if phNumberTxtFld.text != "" && passwordOutlet.text != "" && ageTxtFld.text != "" && usrNameTxtFld.text != "" && genderIs != ""{
+        if phNumberTxtFld.text != "" && phNumberTxtFld.text?.count == 10 && passwordOutlet.text != "" && ageTxtFld.text != "" && ageTxtFld.text?.count == 2 && usrNameTxtFld.text != "" && genderIs != ""{
             
             let regDetails = try! Realm()
             let person = UserDetails()
@@ -93,7 +108,7 @@ class RegViewController: UIViewController {
                     
         }
         else{
-            let alertController = UIAlertController(title: "Error", message: "Please fill in all the required fields.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please fill  the all required fields.", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alertController.addAction(okAction)
                     present(alertController, animated: true, completion: nil)

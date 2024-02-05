@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController {
 //                }
 //        profileButnOutlet.setTitle(storeUserName.first, for: .normal)
         if let firstLetter = storeUserName.first {
-            let firstLetterString = String(firstLetter)
+            let firstLetterString = String(firstLetter).capitalized
             print("First letter: \(firstLetterString)")
             profileButnOutlet.setTitle(firstLetterString, for: .normal)
         } else {

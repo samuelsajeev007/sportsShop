@@ -42,6 +42,7 @@ class ViewController: UIViewController ,UITextFieldDelegate{
         print(Realm.Configuration.defaultConfiguration.fileURL)//get url for database realm
         userNameTxtFld.delegate = self
         passwordTxtFld.delegate = self
+        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
