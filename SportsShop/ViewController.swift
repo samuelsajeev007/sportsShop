@@ -15,7 +15,7 @@ class UserData {
     var firstLetter: String?
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,UITextFieldDelegate{
     //outlets
     @IBOutlet weak var logoImageOutlets: UIImageView!
     @IBOutlet weak var userNameTxtFld: UITextField!
@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var sportsButton: UIButton!
     @IBOutlet weak var regBtnOutlet: UIButton!
     @IBOutlet weak var passwordTxtFld: UITextField!
+    @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var passwordIcon: UIImageView!
     
     
     override func viewDidLoad() {
@@ -33,13 +35,27 @@ class ViewController: UIViewController {
         //setupBackgroundAnimation()
         loginBtnOutlet.layer.cornerRadius = 12
         logoImageOutlets.layer.cornerRadius = 0.5 * logoImageOutlets.bounds.size.width
-        sportsButton.layer.cornerRadius = 0.5 * sportsButton.bounds.size.width
+//        sportsButton.layer.cornerRadius = 0.5 * sportsButton.bounds.size.width
         self.navigationController?.isNavigationBarHidden = true
         loginBtnOutlet.layer.borderWidth = 2
         loginBtnOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
         print(Realm.Configuration.defaultConfiguration.fileURL)//get url for database realm
+        userNameTxtFld.delegate = self
+        passwordTxtFld.delegate = self
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+           if textField == userNameTxtFld {
+               userIcon.isHidden = true
+           } else {
+//               userIcon.isHidden = false
+           }
+            if textField == passwordTxtFld {
+                passwordIcon.isHidden = true
+            } else {
+//                passwordIcon.isHidden = false
+            }
+       }
     
     @IBAction func loginBtnAction(_ sender: Any) {
         loginBtnOutlet.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7)

@@ -51,9 +51,15 @@ extension AdminHomeViewController: UICollectionViewDelegate, UICollectionViewDat
             let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminBookingListViewController") as! AdminBookingListViewController
             navigationController?.pushViewController(adminViewController, animated: true)
         case 3:
-            let adminViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
-            navigationController?.pushViewController(adminViewController, animated: true)
-            
+            let alertController = UIAlertController(title: NSLocalizedString("Log Out", comment: ""), message: NSLocalizedString("Are you Want to Log Out", comment: ""), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let okAction = UIAlertAction(title: "OK", style: .default){ _ in
+                let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                self.navigationController?.pushViewController(secondViewController, animated: true)
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
         default:
             print("default in admin option selection")
         }

@@ -93,6 +93,16 @@ class HomeViewController: UIViewController {
         case 4:
             let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
                         navigationController?.pushViewController(secondViewController, animated: true)
+        case 5:
+            let alertController = UIAlertController(title: NSLocalizedString("Log Out", comment: ""), message: NSLocalizedString("Are you Want to Log Out", comment: ""), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let okAction = UIAlertAction(title: "OK", style: .default){ _ in
+                let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                self.navigationController?.pushViewController(secondViewController, animated: true)
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
         default:
             let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "itemsCollectionViewController") as! itemsCollectionViewController
                         navigationController?.pushViewController(secondViewController, animated: true)

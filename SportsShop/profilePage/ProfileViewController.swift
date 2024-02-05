@@ -12,6 +12,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileButnOutlet: UIButton!
     @IBOutlet weak var profileTableView: UITableView!
     var profileOptions = ["My PhoneNo","My Bookings","Switch mode Dark/Light"]
+    var profileIcons = ["proBlack","cartBlack","darkBlack"]
+    var profileIconsDarkMode = ["proWhite","cartWhite","darkWhite"]
     
     @IBOutlet weak var backBtnOutlet: UIButton!
     override func viewDidLoad() {
@@ -30,10 +32,21 @@ class ProfileViewController: UIViewController {
         profileTableView.register(UINib(nibName: "ProfileListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileListTableViewCell")
         logoImageView.layer.cornerRadius = 0.5 * logoImageView.bounds.size.width
         profileButnOutlet.layer.cornerRadius = 0.5 * profileButnOutlet.bounds.size.width
-        if let username = UserData.shared.firstLetter {
-                    // Use the username as needed
-            profileButnOutlet.setTitle(username, for: .normal)
-                }
+//        if let username = UserData.shared.firstLetter {
+//                    // Use the username as needed
+//            profileButnOutlet.setTitle(username, for: .normal)
+//                }
+//        profileButnOutlet.setTitle(storeUserName.first, for: .normal)
+        if let firstLetter = storeUserName.first {
+            let firstLetterString = String(firstLetter)
+            print("First letter: \(firstLetterString)")
+            profileButnOutlet.setTitle(firstLetterString, for: .normal)
+        } else {
+           
+            print("storeUserName is empty")
+        }
+        
+
     }
     
     @IBAction func backButtonMain(_ sender: Any) {
@@ -51,6 +64,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = profileTableView.dequeueReusableCell(withIdentifier: "ProfileListTableViewCell", for: indexPath)as! ProfileListTableViewCell
         cell.profileLabelOptions.text = profileOptions[indexPath.row]
+        if darkMode{
+            cell.profileLabelIcons.image = UIImage(named: profileIconsDarkMode[indexPath.row])
+        }
+        else{
+            cell.profileLabelIcons.image = UIImage(named: profileIcons[indexPath.row])
+        }
         if indexPath.row == 0{
             cell.profileLabelOptions.text = storeUserName
         }
