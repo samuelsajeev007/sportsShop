@@ -51,7 +51,9 @@ class DeleteViewController: UIViewController {
                        realm.delete(itemsToDelete)
                        print("Items with quantity \(quantity) deleted successfully")
                        let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("deleted successfully", comment: ""), preferredStyle: .alert)
-                       let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                       let okAction = UIAlertAction(title: "OK", style: .default){ _ in
+                           self.navigationController?.popViewController(animated: true)
+                       }
                        alertController.addAction(okAction)
                        present(alertController, animated: true, completion: nil)
                       

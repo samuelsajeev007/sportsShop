@@ -17,6 +17,12 @@ class UserBookingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if darkMode{
+            view.overrideUserInterfaceStyle = .dark
+            view.alpha = 0.8
+        }else{
+            view.overrideUserInterfaceStyle = .light
+        }
         userBookings = realm.objects(BookingDetailsUsers.self).filter("userNameOfBooking == %@", storeUserName)
 
     }

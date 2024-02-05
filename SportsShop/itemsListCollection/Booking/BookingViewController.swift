@@ -23,6 +23,12 @@ class BookingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if darkMode{
+            view.overrideUserInterfaceStyle = .dark
+            view.alpha = 0.8
+        }else{
+            view.overrideUserInterfaceStyle = .light
+        }
         
         bookingTableView.register(UINib(nibName: "ItemImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemImageTableViewCell")
         bookingTableView.register(UINib(nibName: "BookingTableViewCell", bundle: nil), forCellReuseIdentifier: "BookingTableViewCell")
@@ -70,10 +76,23 @@ extension BookingViewController: UITableViewDelegate, UITableViewDataSource{
                 itemIdBokking = cell.itemIdLabelOutlet.text!
                 
             }
+            if darkMode{
+                cell.itemIdLabelOutlet.textColor = .white
+                cell.amountLabelOutlet.textColor = .white
+            }
             return cell
         case 2:
             let cell = bookingTableView.dequeueReusableCell(withIdentifier: "BookingTableViewCell", for: indexPath) as! BookingTableViewCell
             cell.confirmBtnOutlet.addTarget(self, action: #selector(pageChange), for: .touchUpInside)
+            if darkMode{
+                cell.userNameLabelOutlet.textColor = .white
+                cell.minusBtnOutlet.layer.borderColor = UIColor.white.cgColor
+                cell.plusBtnOutlet.layer.borderColor = UIColor.white.cgColor
+//                cell.minusBtnOutlet.setTitleColor(UIColor.white, for: .normal)
+//                cell.plusBtnOutlet.setTitleColor(UIColor.white, for: .normal)
+                cell.delivered5To10LabelOutlet.textColor = .white
+            }
+            
             return cell
         default:
             print("hello")

@@ -170,7 +170,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AS-ow-Fxe">
                                 <rect key="frame" x="234" y="144" width="30" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="IMv-ql-V5j"/>
                                     <constraint firstAttribute="width" constant="30" id="Z8C-mB-jU3"/>
@@ -185,7 +184,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYi-rj-3bL">
                                 <rect key="frame" x="199" y="144" width="30" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="8i9-tK-EmN"/>
                                     <constraint firstAttribute="height" constant="30" id="xhK-KW-dJG"/>
@@ -200,7 +198,6 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyw-vA-ewc">
                                 <rect key="frame" x="158" y="149" width="33" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="33" id="1JG-Sj-5JP"/>
                                     <constraint firstAttribute="height" constant="21" id="Cxr-3L-7oL"/>
@@ -274,6 +271,7 @@
                 <outlet property="afterNoonBtnoutlet" destination="aXA-NU-wIx" id="NfR-31-OFp"/>
                 <outlet property="confirmBtnOutlet" destination="fwV-uJ-Am6" id="Lvv-qQ-tWB"/>
                 <outlet property="countLabelOutlet" destination="Dyw-vA-ewc" id="en3-Jl-2Ye"/>
+                <outlet property="delivered5To10LabelOutlet" destination="lIQ-6b-bE9" id="EpE-JY-s3w"/>
                 <outlet property="mainBackGroundView" destination="wbB-H1-tah" id="VWj-o2-m6h"/>
                 <outlet property="minusBtnOutlet" destination="FYi-rj-3bL" id="6aH-PT-e2H"/>
                 <outlet property="morningBtnOutlet" destination="34h-6N-kQK" id="Q4p-ab-Y6W"/>

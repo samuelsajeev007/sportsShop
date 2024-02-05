@@ -13,10 +13,19 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileTableView: UITableView!
     var profileOptions = ["My PhoneNo","My Bookings","Switch mode Dark/Light"]
     
+    @IBOutlet weak var backBtnOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if darkMode{
+            view.overrideUserInterfaceStyle = .dark
+            view.alpha = 0.8
+            backBtnOutlet.setBackgroundImage(UIImage(named: "backWhite"), for: .normal)
+        }
+        else{
+            view.overrideUserInterfaceStyle = .light
+        }
 //        setupBackgroundAnimations()
         profileTableView.register(UINib(nibName: "ProfileListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileListTableViewCell")
         logoImageView.layer.cornerRadius = 0.5 * logoImageView.bounds.size.width
@@ -58,10 +67,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
             let okAction = UIAlertAction(title: "OK", style: .default) { [self] (_) in
                 if iconClick {
                      darkMode = true
+                    let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    navigationController?.pushViewController(backViewController, animated: true)
+                     
                       } else {
                           darkMode = false
 
-                        
+                          let backViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                          navigationController?.pushViewController(backViewController, animated: true)
                     }
                 iconClick = !iconClick
 

@@ -25,6 +25,7 @@ class BookingTableViewCell: UITableViewCell {
     @IBOutlet weak var successBtnBottamOutlet: NSLayoutConstraint!
     @IBOutlet weak var mainBackGroundView: UIView!
     
+    @IBOutlet weak var delivered5To10LabelOutlet: UILabel!
     
     // variables
     //var count = ["1","2","3","4","5"]

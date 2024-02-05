@@ -17,6 +17,12 @@ class itemsCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        if darkMode{
+            view.overrideUserInterfaceStyle = .dark
+            view.alpha = 0.8
+        }else{
+            view.overrideUserInterfaceStyle = .light
+        }
         itemCollections.register(UINib(nibName: "ItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemsCollectionViewCell")
         fetchItems()
     }
@@ -52,6 +58,9 @@ extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionVi
         if let item = items?[indexPath.item] {
                     cell.configure(with: item)
                 }
+        if darkMode{
+            cell.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

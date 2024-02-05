@@ -50,6 +50,7 @@ class HomeViewController: UIViewController {
         logOutButtonOutlet.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 223/255, alpha: 0.7).cgColor
         if darkMode{
             view.overrideUserInterfaceStyle = .dark
+            view.alpha = 0.8
         }else{
             view.overrideUserInterfaceStyle = .light
         }
