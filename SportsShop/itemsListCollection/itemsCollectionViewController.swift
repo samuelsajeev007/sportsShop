@@ -60,6 +60,7 @@ extension itemsCollectionViewController:UICollectionViewDelegate, UICollectionVi
                 }
         if darkMode{
             cell.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
+            cell.backGroundView.backgroundColor = UIColor(red: 60/255, green: 63/255, blue: 66/255, alpha: 0.7)
         }
         return cell
     }

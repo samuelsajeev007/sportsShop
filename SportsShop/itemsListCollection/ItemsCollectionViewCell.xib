@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-j4-diL">
-                        <rect key="frame" x="2" y="0.0" width="190" height="194"/>
+                        <rect key="frame" x="1" y="0.0" width="192" height="194"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kab-Js-tWm">
@@ -75,14 +75,14 @@
                 <constraint firstAttribute="trailing" secondItem="Vu3-ie-09z" secondAttribute="trailing" constant="15" id="DhW-RK-ctC"/>
                 <constraint firstItem="cRg-1W-GId" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="37" id="FiP-My-mic"/>
                 <constraint firstAttribute="trailing" secondItem="mMv-b3-D00" secondAttribute="trailing" constant="15" id="GaA-dE-Wr7"/>
-                <constraint firstAttribute="trailing" secondItem="cWM-j4-diL" secondAttribute="trailing" constant="2" id="Hbt-tq-u6n"/>
+                <constraint firstAttribute="trailing" secondItem="cWM-j4-diL" secondAttribute="trailing" constant="1" id="Hbt-tq-u6n"/>
                 <constraint firstItem="mMv-b3-D00" firstAttribute="top" secondItem="Kab-Js-tWm" secondAttribute="bottom" constant="9" id="It1-3g-B4R"/>
                 <constraint firstItem="Kab-Js-tWm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Jay-FM-Rba"/>
                 <constraint firstItem="iWp-gE-OSa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="111" id="LTh-fd-db6"/>
                 <constraint firstItem="gVg-qt-uWa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="37" id="Ntr-uq-BXy"/>
                 <constraint firstItem="Vu3-ie-09z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="OQ7-VC-eoN"/>
                 <constraint firstItem="cWM-j4-diL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Sxu-9n-KOQ"/>
-                <constraint firstItem="cWM-j4-diL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="UYc-Ra-9Tj"/>
+                <constraint firstItem="cWM-j4-diL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="UYc-Ra-9Tj"/>
                 <constraint firstItem="Kab-Js-tWm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="VuP-Nz-Aer"/>
                 <constraint firstItem="cRg-1W-GId" firstAttribute="top" secondItem="Kab-Js-tWm" secondAttribute="bottom" constant="9" id="e2v-UZ-ba2"/>
                 <constraint firstItem="mMv-b3-D00" firstAttribute="leading" secondItem="cRg-1W-GId" secondAttribute="trailing" constant="-16" id="f0a-5f-dyi"/>

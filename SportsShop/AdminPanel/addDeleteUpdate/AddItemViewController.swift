@@ -99,7 +99,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         
     }
     func showQuantityAlreadyExistsAlert() {
-        let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("Quantity already exists", comment: ""), preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("Alert", comment: ""), message: NSLocalizedString("item id already exists", comment: ""), preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)

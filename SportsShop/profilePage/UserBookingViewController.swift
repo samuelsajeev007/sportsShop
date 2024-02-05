@@ -51,6 +51,11 @@ extension UserBookingViewController:UITableViewDataSource, UITableViewDelegate{
                    cell.dateLabelOutlet.text = booking.bookingDate
                    
                }
+        if darkMode{
+            cell.backGrndView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.8)
+        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
